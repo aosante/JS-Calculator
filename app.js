@@ -13,7 +13,7 @@ function insertNumber(num) {
 
 //calculate when clicked
 document.querySelector('#equal').addEventListener('click', () => {
-  let expression = textview.value;
+  let expression = textview.value.replace(/\,/g, '');
   textview.value = eval(expression)
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -32,6 +32,6 @@ document.querySelector('#back').addEventListener('click', () => {
 
 //square root function
 document.querySelector('#sqrt').addEventListener('click', () => {
-  let sqrtValue = Math.sqrt(textview.value);
+  let sqrtValue = Math.sqrt(textview.value.replace(/\,/g, ''));
   textview.value = sqrtValue;
 });
